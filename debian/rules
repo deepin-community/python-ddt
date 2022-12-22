@@ -1,0 +1,35 @@
+#!/usr/bin/make -f
+
+UPSTREAM_GIT := https://github.com/txels/ddt.git
+include /usr/share/openstack-pkg-tools/pkgos.make
+
+%:
+	dh $@ --buildsystem=python_distutils --with python3,sphinxdoc
+
+override_dh_auto_clean:
+	rm -rf build .stestr
+	find . -iname '*.pyc' -delete
+	for i in \$\$(find . -type d -iname __pycache__) ; do rm -rf \$\$i ; done
+
+override_dh_auto_build:
+	echo "Do nothing..."
+
+override_dh_auto_install:
+	pkgos-dh_auto_install --no-py2
+
+override_dh_clean:
+	rm -rf docs/_build/
+	dh_clean
+
+override_dh_auto_test:
+ifeq (,$(findstring nocheck, $(DEB_BUILD_OPTIONS)))
+	for i in $(PYTHON3S) ; do \
+		python$$i -m pytest -v ; \
+	done
+endif
+
+override_dh_sphinxdoc:
+ifeq (,$(findstring nodoc, $(DEB_BUILD_OPTIONS)))
+	python3 -m sphinx -b html docs $(CURDIR)/debian/python-ddt-doc/usr/share/doc/python-ddt-doc/html
+	dh_sphinxdoc
+endif

@@ -1,0 +1,139 @@
+python-ddt (1.4.2-2) unstable; urgency=medium
+
+  * Uploading to unstable.
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 29 Sep 2021 12:29:10 +0200
+
+python-ddt (1.4.2-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Removed pyyaml-unsafeloader.patch applied upstream.
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 24 Aug 2021 16:53:31 +0200
+
+python-ddt (1.4.1-2.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Patch: Support pyyaml's security patch in 5.3.1-4 (from 5.4 upstream).
+    (Closes: #989009)
+
+ -- Stefano Rivera <stefanor@debian.org>  Sun, 23 May 2021 11:51:10 -0400
+
+python-ddt (1.4.1-2) unstable; urgency=medium
+
+  * Uploading to unstable.
+  * Add a debian/salsa-ci.yaml.
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 14 Oct 2020 10:11:28 +0200
+
+python-ddt (1.4.1-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Switch to pytest instead of nose, as per upstream change.
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 08 Sep 2020 15:09:29 +0200
+
+python-ddt (1.3.1-3) unstable; urgency=medium
+
+  * Uploading to unstable.
+  * Switch to debhelper-compat 11.
+
+ -- Thomas Goirand <zigo@debian.org>  Fri, 08 May 2020 09:40:21 +0200
+
+python-ddt (1.3.1-2) experimental; urgency=medium
+
+  * Build-depends on latest python-yaml (FTBFS otherwise).
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 06 Apr 2020 18:44:30 +0200
+
+python-ddt (1.3.1-1) experimental; urgency=medium
+
+  * New upstream release.
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 31 Mar 2020 14:30:50 +0200
+
+python-ddt (1.2.1-3) unstable; urgency=medium
+
+  * Switched from pep8 to python3-pep8 (Closes: #949935).
+  * Fixed d/copyright ordering and years.
+
+ -- Thomas Goirand <zigo@debian.org>  Fri, 07 Feb 2020 09:03:56 +0100
+
+python-ddt (1.2.1-2) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Running wrap-and-sort -bast.
+  * Use debhelper-compat instead of debian/compat.
+
+  [ Thomas Goirand ]
+  * Uploading to unstable.
+
+ -- Thomas Goirand <zigo@debian.org>  Thu, 18 Jul 2019 22:16:58 +0200
+
+python-ddt (1.2.1-1) experimental; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Use team+openstack@tracker.debian.org as maintainer
+
+  [ Thomas Goirand ]
+  * New upstream release.
+  * Removed Python 2 support.
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 08 Apr 2019 15:01:04 +0200
+
+python-ddt (1.1.1-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Fixed VCS URLs (https).
+  * d/rules: Changed UPSTREAM_GIT protocol to https
+  * d/copyright: Changed source URL to https protocol
+  * d/control: Set Vcs-* to salsa.debian.org
+
+  [ Daniel Baumann ]
+  * Updating copyright format url.
+  * Updating maintainer field.
+  * Running wrap-and-sort -bast.
+  * Removing gbp.conf, not used anymore or should be specified in the
+    developers dotfiles.
+
+  [ Thomas Goirand ]
+  * Standards-Version is now 4.1.3.
+  * New upstream release.
+  * Fixed build-depends for this release.
+  * debian/rules: some clean-ups.
+
+ -- Thomas Goirand <zigo@debian.org>  Fri, 02 Mar 2018 17:53:47 +0100
+
+python-ddt (1.0.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Fixed && into ; in debian/rules.
+
+ -- Thomas Goirand <zigo@debian.org>  Sun, 03 Jan 2016 23:15:36 +0800
+
+python-ddt (1.0.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Added python-six as build-depends-indep.
+  * Ran wrap-and-sort -t -a.
+  * Added dh-python as build-depends.
+  * Removed version in python-all build-depends.
+  * Added Python 3 support.
+  * Added debian/source/options to ignore the generated egg-info.
+  * Using a separate package for the -doc.
+  * Standards-Version: 3.9.6 (no change).
+  * Fixed debian/copyright to use MIT license, not LGPL.
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 27 May 2015 10:27:39 +0200
+
+python-ddt (0.4.0-2) unstable; urgency=low
+
+  * Not specifying the version of the LGPL in debian/copyright.
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 22 Oct 2013 02:21:34 +0800
+
+python-ddt (0.4.0-1) unstable; urgency=low
+
+  * Initial release. (Closes: #724904)
+
+ -- Thomas Goirand <zigo@debian.org>  Sun, 29 Sep 2013 22:52:44 +0800
